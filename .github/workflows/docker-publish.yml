@@ -3,7 +3,7 @@ name: Docker Build and Publish
 on:
   push:
     branches:
-      - main  # Adjust this to your main branch name or specific branches you want to trigger on
+      - main  # Adjust this to your main branch name or specific branches you want to trigger on jkds
 
 jobs:
   build-and-push:
