@@ -26,3 +26,10 @@ jobs:
       run: |
         docker build -t ${{ secrets.DOCKER_USERNAME }}/first_image:${{ github.sha }} -f .github/workflows/Dockerfile .
         docker push ${{ secrets.DOCKER_USERNAME }}/first_image:${{ github.sha }}
+    - name: Trigger GitHub Webhook
+      if: success()  # This ensures the webhook is triggered only if the previous steps were successful
+      env:
+        WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+      run: |
+        curl -X POST $WEBHOOK_URL -H "Content-Type: application/json" -d '{"status":"success"}'
+E
