@@ -30,7 +30,7 @@ jobs:
     - name: Trigger Jenkins Job
       if: success()  # This ensures the Jenkins job is triggered only if the previous steps were successful
       env:
-        JENKINS_JOB_URL: ${{ secrets.JENKINS_JOB_URL }}
+        WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
         JENKINS_API_TOKEN: ${{ secrets.JENKINS_API_TOKEN }}
       run: |
-        curl -X POST $JENKINS_JOB_URL --user "${{ secrets.JENKINS_USERNAME }}:${{ secrets.JENKINS_API_TOKEN }}"
+        curl -X POST $WEBHOOK_URL --user "${{ secrets.JENKINS_USERNAME }}:${{ secrets.JENKINS_API_TOKEN }}"
