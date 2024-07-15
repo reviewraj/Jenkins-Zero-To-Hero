@@ -3,7 +3,7 @@ name: Docker Build and Publish
 on:
   push:
     branches:
-      - main  # Adjust this to your main branch name
+      - main  # Adjust this to your main branch name or specific branches you want to trigger on
 
 jobs:
   build-and-push:
@@ -24,6 +24,5 @@ jobs:
 
     - name: Build and push Docker image
       run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/first_image:${{ github.sha }} -f .github/workflows/Dockerfile
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/first_image:${{ github.sha }} -f .github/workflows/Dockerfile .
         docker push ${{ secrets.DOCKER_USERNAME }}/first_image:${{ github.sha }}
-
