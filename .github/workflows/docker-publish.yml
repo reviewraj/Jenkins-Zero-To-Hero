@@ -32,4 +32,3 @@ jobs:
         WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
       run: |
         curl -X POST $WEBHOOK_URL -H "Content-Type: application/json" -d '{"status":"success"}'
-E
