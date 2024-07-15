@@ -7,7 +7,7 @@
 #
 # 2. Set up secrets in your workspace:
 #    - TENCENT_CLOUD_SECRET_ID with Tencent Cloud secret id
-#    - TENCENT_CLOUD_SECRET_KEY with Tencent Cloud secret key
+#    - TENCENT_CLOUD_SECRET_KEY with Tencent Cloud secret keyhbjbj
 #    - TENCENT_CLOUD_ACCOUNT_ID with Tencent Cloud account id
 #    - TKE_REGISTRY_PASSWORD with TKE registry password
 #
